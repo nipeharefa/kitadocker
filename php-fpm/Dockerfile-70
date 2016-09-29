@@ -1,0 +1,9 @@
+FROM laradock/php-fpm:7.0--1.2
+
+MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+
+WORKDIR /var/www/laravel
+
+CMD ["php-fpm"]
+
+EXPOSE 9000
