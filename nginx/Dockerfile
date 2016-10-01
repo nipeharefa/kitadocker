@@ -2,7 +2,7 @@ FROM nginx:latest
 
 ARG PHP_UPSTREAM=php-fpm
 
-RUN apt update
+RUN apt update && apt install vim -y
 ADD nginx.conf /etc/nginx/
 COPY sites/*.conf /etc/nginx/sites-available/
 
