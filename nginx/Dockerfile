@@ -2,6 +2,7 @@ FROM nginx:latest
 
 ARG PHP_UPSTREAM=php-fpm
 
+RUN apt update
 ADD nginx.conf /etc/nginx/
 COPY sites/*.conf /etc/nginx/sites-available/
 

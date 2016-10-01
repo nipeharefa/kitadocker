@@ -4,6 +4,10 @@ MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
 WORKDIR /var/www/laravel
 
+ADD ./laravel.ini /usr/local/etc/php/conf.d
+
+ADD ./laravel.pool.conf /usr/local/etc/php-fpm.d/
+
 CMD ["php-fpm"]
 
 EXPOSE 9000
