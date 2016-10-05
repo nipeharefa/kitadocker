@@ -72,7 +72,20 @@ services:
             # for mysql container
             - "mysql:db"
             # for mariadb container
+
             # - "mariadb:db"
+    # Elastic
+
+
+    elasticsearch:
+        build: ./elasticsearch
+        volumes_from:
+            - volumes_data
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+
+    ################################NODE JS ================================
     node:
         build: ./node
 
@@ -94,3 +107,4 @@ services:
         volumes:
             - ./data/mysql:/var/lib/mysql
             - ./data/sessions:/sessions
+            - ./data/elasticsearch/data:/usr/share/elasticsearch/data
