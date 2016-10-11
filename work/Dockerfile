@@ -2,7 +2,7 @@ FROM ubuntu
 
 MAINTAINER Nipe Setiawan Harefa <nipeharefa@gmail.com>
 
-RUN apt update && install --force-yes \
+RUN apt update && apt install --force-yes \
 	 php php-curl php-cli \ 
 	 php-mysql \
 	 php-mbstring php-xml php-zip curl vim git
