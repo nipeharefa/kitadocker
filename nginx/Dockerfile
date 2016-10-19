@@ -1,4 +1,4 @@
-FROM nginx:lates
+FROM nginx:latest
 
 ARG PHP_UPSTREAM=php-fpm
 
