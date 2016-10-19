@@ -2,7 +2,7 @@ FROM ubuntu
 
 MAINTAINER Nipe Setiawan Harefa <nipeharefa@gmail.com>
 
-RUN apt update && apt install --force-yes \
+RUN apt update && apt-get install -y \
 	 php php-curl php-cli \ 
 	 php-mysql \
 	 php-mbstring php-xml php-zip curl vim git
@@ -12,7 +12,7 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get install -y nodejs
 
 # Install gulp, bower
-RUN npm i -g bower gulp npm
+RUN npm i -g npm
 
 # Install composer and add its bin to the PATH.
 RUN curl -s http://getcomposer.org/installer | php && \

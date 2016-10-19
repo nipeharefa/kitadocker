@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:lates
 
 ARG PHP_UPSTREAM=php-fpm
 
@@ -12,4 +12,4 @@ RUN echo "upstream php-upstream { server ${PHP_UPSTREAM}:9000; }" > /etc/nginx/c
 RUN usermod -u 1000 www-data
 
 
-EXPOSE 80
+EXPOSE 80 443
