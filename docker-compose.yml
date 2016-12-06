@@ -40,9 +40,26 @@ services:
             - ./logs/nginx/:/var/log/nginx
         ports:
             - "80:80"
+            - "443:443"
         links:
             - php-fpm
 
+    nginxhttp2:
+        build:
+            context: ./nginxhttp2
+            args:
+                - PHP_UPSTREAM=php-fpm
+        volumes_from:
+            - volumes_source
+        volumes:
+            - ./logs/nginxhttp2/:/var/log/nginx
+        ports:
+            - "80:80"
+            - "443:443"
+        links:
+            - php-fpm
+
+	
     ### MySQL Container #########################################
 
     mysql:
