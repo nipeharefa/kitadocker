@@ -14,5 +14,7 @@ RUN echo "upstream php-upstream { server ${PHP_UPSTREAM}:9000; }" > /etc/nginx/c
 
 RUN usermod -u 1000 www-data
 
+# RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 40976EAF437D05B5
+
 
 EXPOSE 80 443
