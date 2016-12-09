@@ -59,7 +59,6 @@ services:
         links:
             - php-fpm
 
-	
     ### MySQL Container #########################################
 
     mysql:
