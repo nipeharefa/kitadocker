@@ -59,7 +59,6 @@ services:
         links:
             - php-fpm
 
-	
     ### MySQL Container #########################################
 
     mysql:
@@ -96,6 +95,8 @@ services:
 
     elasticsearch:
         build: ./elasticsearch
+        environment:
+            ES_JAVA_OPTS: "-Xms1g -Xmx1g"
         volumes_from:
             - volumes_data
         ports:
