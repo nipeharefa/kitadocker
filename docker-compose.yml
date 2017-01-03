@@ -91,6 +91,16 @@ services:
 
             # - "mariadb:db"
     # Elastic
+    # 
+    # 
+    ### Redis Container #########################################
+
+    redis:
+        build: ./redis
+        volumes_from:
+            - volumes_data
+        ports:
+            - "6379:6379"
 
 
     elasticsearch:
@@ -126,3 +136,4 @@ services:
             - ./data/mysql:/var/lib/mysql
             - ./data/sessions:/sessions
             - ./data/elasticsearch/data:/usr/share/elasticsearch/data
+            - ./data/redis:/data
